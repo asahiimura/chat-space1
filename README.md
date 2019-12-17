@@ -31,6 +31,7 @@ Things you may want to cover:
 |password|string|null: false|
 |name|string|null: false|
 ### Association
+  has_many :groups_users
 - has_many :grups, through:  :groups_users
 - has_many :comments
 
@@ -46,11 +47,12 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## grupsテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|gruoname|text|null: false|
+|name|string|null: false|
 ### Association
+  has_many :groups_users
 - has_many :users, through:  :groups_users
 - has_many  :comments
 
@@ -58,8 +60,10 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|image|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+
 ### Association
 - belongs_to :group
 - belongs_to :user
